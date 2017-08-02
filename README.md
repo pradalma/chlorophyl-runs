@@ -21,6 +21,9 @@ Notice that root in compile_CM2M_compile is set to $HOME/Riga_Grace_acdm. Change
 what makefile should I use? --> cat Makefile
 template should be the same that I used from login2 I think
 set TEMPLATE = "$FREROOT/site/mkmf.template.login2"
+cat >$HOME/Riga/CM2M_compile/exec-hpcs/Makefile <<END
+
+cat >$HOME/Riga_Grace_acdm/CM2M_compile/exec-hpcs/Makefile <<END
 
 
 
