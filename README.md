@@ -18,5 +18,9 @@ make clean
 
 edit compile_CM2M_compile.csh based on compile_login2_CM2M_compile.csh
 Notice that root in compile_CM2M_compile is set to $HOME/Riga_Grace_acdm. Change this!!!
+what makefile should I use? --> cat Makefile
+template should be the same that I used from login2 I think
+set TEMPLATE = "$FREROOT/site/mkmf.template.login2"
+
 
 
