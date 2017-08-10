@@ -1,1 +1,69 @@
-8/9/2017, LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2 pending
+8/9/2017,   LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2 pending
+8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2 running (11 years completed)
+8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr pending
+
+
+
+
+------------------------------------------------------------------------------------------
+HEADER OF SCRIPTS
+------------------------------------------------------------------------------------------
+8/9/2017, acdm_doublingCO2
+
+  set name = acdm_doublingCO2
+  set rtsxml = /home/pradalma/Riga_Chlorophyl/xml/CM2Mc_ESM_acdom.xml
+  set work = /datascope/pradal-esm/model_output/TMPDIR.$$
+  set root = /home/pradalma/Riga_Chlorophyl
+  set archive = /datascope/pradalma/Riga/riga_rds/CM2Mc_Control-1900
+  setenv FREROOT /home/pradalma/fre3
+  set scriptName = /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2
+  set outputDir = /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_doublingCO2_marie
+  set gridSpec = /home/rdslater/GFDL/archive/fms/mom4/mom4p1/quebec/bling/mosaic.nc
+  set initCond = /home/pradalma/archiverds/15000101.cpio
+  set executable = /home/pradalma/Riga_Chlorophyl/CM2M_compile/exec-hpcs/fms_CM2M_compile.x
+  set npes = 45
+  set monthslist = ( 12 12 12 12 12 12 12 12 12 12 )
+  set dayslist = ( 0 0 0 0 0 0 0 0 0 0)
+  set numSubmissions = 30
+  set combineFreq = 1
+  set baseDate = '1 1 1 0 0 0'
+
+------------------------------------------------------------------------------------------
+8/10/2017, acdm_300yr 
+
+  set name = acdm_300yr_marie
+  set rtsxml = /home/pradalma/Riga_Chlorophyl/xml/CM2Mc_ESM_acdom.xml
+  set work = /datascope/pradal-esm/model_output/TMPDIRacdm_300yr_marie.$$
+  set root = /home/pradalma/Riga_Chlorophyl
+  set archive = /datascope/pradalma/Riga/riga_rds/CM2Mc_Control-1900
+  setenv FREROOT /home/pradalma/fre3
+  set scriptName = /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr
+  set outputDir = /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_300yr_marie
+  set gridSpec = /home/rdslater/GFDL/archive/fms/mom4/mom4p1/quebec/bling/mosaic.nc
+  set initCond = /home/pradalma/archiverds/15000101.cpio
+  set executable = /home/pradalma/Riga_Chlorophyl/CM2M_compile/exec-hpcs/fms_CM2M_compile.x
+  set npes = 45
+  set monthslist = ( 12 12 12 12 12 12 12 12 12 12 )
+  set dayslist = ( 0 0 0 0 0 0 0 0 0 0)
+  set numSubmissions = 30
+  set combineFreq = 1
+  set baseDate = '1 1 1 0 0 0'
+
+------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
