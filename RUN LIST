@@ -1,6 +1,12 @@
 8/9/2017,   LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2 pending
 8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2 running (11 years completed)
 8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr pending
+8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scipts/acdm_300yr running
+8/12/2017,  moved /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_300yr_marie to acdm_300yr_marie_qsub_old
+8/12/2017,  rm -rf /datascope/pradal-esm/model_output/*
+8/12/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr pending
+
+
 
 
 
@@ -8,6 +14,68 @@
 ------------------------------------------------------------------------------------------
 HEADER OF SCRIPTS
 ------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+8/12/2017, acdm_300yr
+list restarts: ls -lrth /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_300yr_marie_qsub_old/restart/
+-rw-r--r--+ 1 pradalma gnana 220M Aug 12 05:11 15390101.cpio
+~
+
+Reload commands :
+
+set irun         =  10
+set ireload      =  4
+set initCond     =  /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_300yr_marie/restart/15390101.cpio
+set combine_list = ()
+set fyear        =  1539
+~                          
+
+Script:
+
+  set name = acdm_300yr_marie
+  set rtsxml = /home/pradalma/Riga_Chlorophyl/xml/CM2Mc_ESM_acdom.xml
+  set work = /datascope/pradal-esm/model_output/TMPDIRacdm_300yr_marie.$$
+  set root = /home/pradalma/Riga_Chlorophyl
+  set archive = /datascope/pradalma/Riga/riga_rds/CM2Mc_Control-1900
+  setenv FREROOT /home/pradalma/fre3
+  set scriptName = /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr
+  set outputDir = /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_300yr_marie
+  set gridSpec = /home/rdslater/GFDL/archive/fms/mom4/mom4p1/quebec/bling/mosaic.nc
+  set initCond = /home/pradalma/archiverds/15000101.cpio
+  set executable = /home/pradalma/Riga_Chlorophyl/CM2M_compile/exec-hpcs/fms_CM2M_compile.x
+  set npes = 45
+  set monthslist = ( 12 12 12 12 12 12 12 12 12 12 )
+  set dayslist = ( 0 0 0 0 0 0 0 0 0 0)
+  set numSubmissions = 30
+  set combineFreq = 1
+  set baseDate = '1 1 1 0 0 0'
+  ...
+  THIS IS DIFFERENT!!! (replaced qsub by sbatch)
+      #figure out which queue to use next
+    if ( $alloc > 0 ) then
+      echo reloading
+#      set resubmit = "ssh hhpc-hn1 qsub $scriptName"
+      set resubmit = "ssh login sbatch $scriptName"
+      @ alloc--
+    else if ( $windf > 0 ) then
+     if ( "$project" != "" ) then
+         set projlist = (`qconf -sprjl`)
+         set firstc = `echo $project | sed 's/.* //' | sed 's/\(.*\)\(.$\)/\1/'`
+         set lastc  = `echo $project | sed 's/.* //' | sed 's/\(.*\)\(.$\)/\2/'`
+         if ( "$lastc" == "p" ) then
+            foreach p ($projlist)
+               if ( "$p" == "${firstc}d" || "$p" == "$firstc" ) set project = ( -P $p )
+            end
+         endif
+      endif
+      echo reloading
+#      set resubmit = "ssh hhpc-hn1 qsub $scriptName"
+      set resubmit = "ssh login sbatch $scriptName"
+      @ windf--
+    else
+      echo "WARNING: Have not reached $numSubmissions submissions, but no queue time remaining"
+      set resubmit = ""
+------------------------------------------------------------------------------------------
+
 8/9/2017, acdm_doublingCO2
 
   set name = acdm_doublingCO2
