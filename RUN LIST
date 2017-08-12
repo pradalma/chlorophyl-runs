@@ -1,7 +1,7 @@
-8/9/2017,   LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2 pending
-8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2 running (11 years completed)
-8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr pending
-8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scipts/acdm_300yr running
+8/9/2017,   LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2_qsub_old pending
+8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2_qsub_old running (11 years completed)
+8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr_qsub_old pending
+8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scipts/acdm_300yr_qsub_old running
 8/12/2017,  moved /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_300yr_marie to acdm_300yr_marie_qsub_old
 8/12/2017,  rm -rf /datascope/pradal-esm/model_output/*
 8/12/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr pending
@@ -76,7 +76,7 @@ Script:
       set resubmit = ""
 ------------------------------------------------------------------------------------------
 
-8/9/2017, acdm_doublingCO2
+8/9/2017, acdm_doublingCO2_qsub_old
 
   set name = acdm_doublingCO2
   set rtsxml = /home/pradalma/Riga_Chlorophyl/xml/CM2Mc_ESM_acdom.xml
@@ -97,7 +97,7 @@ Script:
   set baseDate = '1 1 1 0 0 0'
 
 ------------------------------------------------------------------------------------------
-8/10/2017, acdm_300yr 
+8/10/2017, acdm_300yr_qsub_old
 
   set name = acdm_300yr_marie
   set rtsxml = /home/pradalma/Riga_Chlorophyl/xml/CM2Mc_ESM_acdom.xml
