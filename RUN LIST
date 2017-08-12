@@ -4,18 +4,49 @@
 8/10/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scipts/acdm_300yr_qsub_old running
 8/12/2017,  moved /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_300yr_marie to acdm_300yr_marie_qsub_old
 8/12/2017,  rm -rf /datascope/pradal-esm/model_output/*
-8/12/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr pending
-
-
-
-
-
+8/12/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr pending PID 300571
+8/12/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2 pending PID 300572
 
 ------------------------------------------------------------------------------------------
 HEADER OF SCRIPTS
 ------------------------------------------------------------------------------------------
+8/12/2017, acdm_doublingCO2
+list restarts: ls -lrth /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_doublingCO2_marie/restart/
+-rw-r--r--+ 1 pradalma gnana 220M Aug 11 13:44 15390101.cpio
+
+_doublingCO2_marie/ascii/reload_commands
+
+set irun         =  10
+set ireload      =  4
+set initCond     =  /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_doublingCO2_marie/restart/15390101.cpio
+set combine_list = ()
+set fyear        =  1539
+~                       
+  set name = acdm_doublingCO2
+  set rtsxml = /home/pradalma/Riga_Chlorophyl/xml/CM2Mc_ESM_acdom.xml
+  set work = /datascope/pradal-esm/model_output/TMPDIR.$$
+  set root = /home/pradalma/Riga_Chlorophyl
+  set archive = /datascope/pradalma/Riga/riga_rds/CM2Mc_Control-1900
+  setenv FREROOT /home/pradalma/fre3
+  set scriptName = /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2
+  set outputDir = /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_doublingCO2_marie
+  set gridSpec = /home/rdslater/GFDL/archive/fms/mom4/mom4p1/quebec/bling/mosaic.nc
+  set initCond = /home/pradalma/archiverds/15000101.cpio
+  set executable = /home/pradalma/Riga_Chlorophyl/CM2M_compile/exec-hpcs/fms_CM2M_compile.x
+  set npes = 45
+  set monthslist = ( 12 12 12 12 12 12 12 12 12 12 )
+  set dayslist = ( 0 0 0 0 0 0 0 0 0 0)
+  set numSubmissions = 30
+  set combineFreq = 1
+  set baseDate = '1 1 1 0 0 0'3
+  
+  --- NEW: qsub replaced by sbatch!!!
+  
+  
+------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 8/12/2017, acdm_300yr
+THIS RUN SHOULD START BACK AT 1500 since I moved the output directories to a new location
 list restarts: ls -lrth /datascope/pradal-esm/Riga/riga_rds/CM2Mc_Control-1900/acdm_300yr_marie_qsub_old/restart/
 -rw-r--r--+ 1 pradalma gnana 220M Aug 12 05:11 15390101.cpio
 ~
