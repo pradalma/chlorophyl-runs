@@ -2,5 +2,26 @@ Aug 10 2017, doubling CO2, 11 years completed.
 15110101.ocean_month.nc:
 SST, how does it compare to Grace's benchmark run of control CO2?
 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history
+------------
+Aug 17 2017, 300yr run:
+
+Make a 50yr climatology:
+/home/pradalma/opt/bin/ncra -F -d time,3,,12 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history/15[012345]*.ocean_bling.nc temp03.nc
+/home/pradalma/opt/bin/ncra -F -d time,4,,12 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history/15[012345]*.ocean_bling.nc temp04.nc
+/home/pradalma/opt/bin/ncra -F -d time,5,,12 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history/15[012345]*.ocean_bling.nc temp05.nc
+/home/pradalma/opt/bin/ncra -F -d time,6,,12 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history/15[012345]*.ocean_bling.nc temp06.nc
+/home/pradalma/opt/bin/ncra -F -d time,7,,12 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history/15[012345]*.ocean_bling.nc temp07.nc
+/home/pradalma/opt/bin/ncra -F -d time,8,,12 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history/15[012345]*.ocean_bling.nc temp08.nc
+/home/pradalma/opt/bin/ncra -F -d time,9,,12 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history/15[012345]*.ocean_bling.nc temp09.nc
+/home/pradalma/opt/bin/ncra -F -d time,10,,12 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history/15[012345]*.ocean_bling.nc temp010.nc
+/home/pradalma/opt/bin/ncra -F -d time,11,,12 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history/15[012345]*.ocean_bling.nc temp011.nc
+/home/pradalma/opt/bin/ncra -F -d time,12,,12 /datascope/pradal-esm/gkfiles/acdm_runs/CM2Mc_acdm_300yr/history/15[012345]*.ocean_bling.nc temp012.nc
+
+ncrcat -h temp*.nc acdm_300yr.ocean_bling.1500-1559.clim.nc
+rm temp*.nc
+
+Results stored in /datascope/pradal-esm/:
+
+
 
 
