@@ -6,6 +6,9 @@
 8/12/2017,  rm -rf /datascope/pradal-esm/model_output/*
 8/12/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr pending PID 300571
 8/12/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2 pending PID 300572
+8/17/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_doublingCO2 pending PID 300952 (restart 1559)
+8/17/2017,  LOGIN2, /home/pradalma/Riga_Chlorophyl/scripts/acdm_300yr pending PID 300951 (restart 1560)
+
 
 ------------------------------------------------------------------------------------------
 HEADER OF SCRIPTS
