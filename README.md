@@ -1,4 +1,10 @@
 # chlorophyl-runs
+New ensemble runs, but first, run a longer spin up.
+Currently idl waiting on HHPC help desk to fix the following issue: 
+
+forrtl: error (78): process killed (SIGTERM)
+
+
 cp -r /datascope/pradal-esm/gkfiles/Riga_versions_GK/Riga_Grace_acdm /home/pradalma/Riga_Chlorophyl/.
 in scripts: look at acdm_300yr and 
 acdm_doublingCO2
