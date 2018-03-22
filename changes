@@ -1,0 +1,11 @@
+Changed /home/pradalma/fms/bin/clean_scratch_work to allow work = /datascope/pradal-esm/scratch
+
+Changed /home/pradalma/Riga_Chlorophyll/scritps/acdm_1000years_restart1 
+1/ work=/datascope/pradal-esm/scratch
+2/ echo "Removing $work directory"
+/home/pradalma/fms/bin/clean_scratch_work $work
+
+Changed /home/pradalma/Riga_Chlorophyll/scritps/nocdm_1000years_restart1 
+1/ work=/datascope/pradal-esm/scratch
+2/ echo "Removing $work directory"
+/home/pradalma/fms/bin/clean_scratch_work $work
