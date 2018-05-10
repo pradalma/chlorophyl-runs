@@ -1,0 +1,40 @@
+Changed /home/pradalma/fms/bin/clean_scratch_work to allow work = /datascope/pradal-esm/scratch
+
+Changed /home/pradalma/Riga_Chlorophyll/scritps/acdm_1000years_restart1 
+1/ work=/datascope/pradal-esm/scratch
+2/ echo "Removing $work directory"
+/home/pradalma/fms/bin/clean_scratch_work $work
+
+Changed /home/pradalma/Riga_Chlorophyll/scritps/nocdm_1000years_restart1 
+1/ work=/datascope/pradal-esm/scratch
+2/ echo "Removing $work directory"
+/home/pradalma/fms/bin/clean_scratch_work $work
+
+acdm_doubling_1900 won't run. The difference with the older acdm_doubling_enscold is: 
+
+ acdm_doubling_1860
+1679,1681c1683,1685
+< "ATM",     "c14o2_flux_pcair_atm",           "", "",  .false.,   572.0e-06
+< "ATM",       "co2_flux_pcair_atm",           "", "",  .false.,   572.0e-06
+< "ATM",   "co2_sat_flux_pcair_atm",           "", "",  .false.,   572.0e-06
+---
+> "ATM",     "c14o2_flux_pcair_atm",           "CO2", "",  .false.,   572.0e-06
+> "ATM",       "co2_flux_pcair_atm",           "CO2", "",  .false.,   572.0e-06
+> "ATM",   "co2_sat_flux_pcair_atm",           "CO2", "",  .false.,   572.0e-06
+1683,1684c1687,1688
+< "ATM",       "co2_flux_pcair_atm",           "", "",  .false.,   572.0e-06
+< "ATM",                  "co2_bot",              "",                                            "", .false., 572.0e-6
+---
+> "ATM",       "co2_flux_pcair_atm",           "CO2", "",  .false.,   572.0e-06
+> "ATM",                  "co2_bot",              "",                                            "", .false., 286.0e-6
+1690,1692c1694,1696
+< "ATM",      "i14co2_flux_pcair_atm",  "",          "", .false.,  572.0e-06
+< "ATM",      "ico2_flux_pcair_atm",    "",          "", .false.,  572.0e-06
+< "ATM",      "ico2sat_flux_pcair_atm", "",          "", .false.,  572.0e-06
+---
+> "ATM",      "i14co2_flux_pcair_atm",  "CO2",          "", .false.,  572.0e-06
+> "ATM",      "ico2_flux_pcair_atm",    "CO2",          "", .false.,  572.0e-06
+> "ATM",      "ico2sat_flux_pcair_atm", "CO2",          "", .false.,  572.0e-06
+2700,2702c2704,2705
+
+--> Change made by Marie-Aude, on May 10: delete the CO2 definitions
